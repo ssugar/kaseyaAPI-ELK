@@ -57,7 +57,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    #Set the virtual machine 'box' to use
    config.vm.box = "hashicorp/precise64"
    #Set the vm name
-   config.vm.define :netmonELK do |t|
+   config.vm.define :kaseyaELK do |t|
+   end
+
+   config.vm.provider :hyperv do |v|
+	 v.vmname = "kaseyaELK"
+     v.memory = 2048
+	 v.cpus = 4
    end
    
    #copy the ELK installer files locally to save time
